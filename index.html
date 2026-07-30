@@ -35,6 +35,8 @@
     font-family: Georgia, 'Times New Roman', serif;
     min-height: 100vh;
     line-height: 1.5;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
   }
 
   img, svg { display: block; }
@@ -60,6 +62,11 @@
     height: 1px;
     background: var(--brown-mid);
     opacity: 0.6;
+    flex-shrink: 0;
+  }
+  @media (max-width: 380px) {
+    .eyebrow { gap: 8px; letter-spacing: 2px; }
+    .eyebrow::before, .eyebrow::after { width: 16px; }
   }
 
   .rule {
@@ -157,7 +164,6 @@
   }
   @media (max-width: 640px) {
     .feature-grid { grid-template-columns: 1fr; }
-    .feature-card--consigner { margin-top: 50px; }
   }
 
   .feature-card {
@@ -168,7 +174,7 @@
     padding: 20px 18px;
     overflow: hidden;
   }
-  .feature-card--consigner { overflow: visible; }
+  .feature-card--scanner { overflow: visible; }
   .card-dog {
     position: absolute;
     width: 92px;
@@ -350,15 +356,10 @@
       </div>
 
       <div class="feature-grid">
-        <div class="feature-card">
+        <div class="feature-card feature-card--scanner">
           <p class="feature-eyebrow">Scanner</p>
           <h3 class="feature-title">Un livre, une fiche complète</h3>
           <p class="feature-body">Scanne le code-barres et Litrea reconstitue la fiche complète du livre : auteur, éditeur, collection, édition originale, série.</p>
-        </div>
-        <div class="feature-card feature-card--consigner">
-          <p class="feature-eyebrow">Consigner</p>
-          <h3 class="feature-title">Notes, citations, mots</h3>
-          <p class="feature-body">Garde une citation qui t'a marqué, note tes impressions, retiens un mot découvert au fil des pages.</p>
           <svg class="card-dog" viewBox="0 0 12095 12095" xmlns="http://www.w3.org/2000/svg">
             <path d="M3099.814,9960.846c-21.173,-24.483 -282.408,27.857 -374.109,320.331c-96.427,307.548 -325.885,242.436 -412.087,625.708c261.963,-72.379 912.856,333.532 921.669,-771.109c0.485,-60.776 -35.453,-59.272 -135.473,-174.93Z" style="fill:#f0e6d8;stroke:#6b3a2a;stroke-width:41.67px;"/>
             <path d="M3990.703,10415.356c-23.794,-21.945 -277.48,59.46 -335.685,360.396c-61.205,316.446 -296.533,277.569 -339.056,668.107c252.154,-101.398 944.591,228.687 829.039,-869.929c-6.357,-60.444 -41.898,-54.906 -154.298,-158.574Z" style="fill:#f0e6d8;stroke:#6b3a2a;stroke-width:41.67px;"/>
@@ -380,6 +381,11 @@
             <path d="M1796.732,8789.276c-72.016,685.201 -72.065,657.172 -181.072,1394.899" style="fill:none;stroke:#6b3a2a;stroke-width:41.67px;"/>
             <path d="M1616.303,10195.14c81.42,-3.448 93.76,-3.255 175.038,-7.835" style="fill:none;stroke:#6b3a2a;stroke-width:41.67px;"/>
           </svg>
+        </div>
+        <div class="feature-card">
+          <p class="feature-eyebrow">Consigner</p>
+          <h3 class="feature-title">Notes, citations, mots</h3>
+          <p class="feature-body">Garde une citation qui t'a marqué, note tes impressions, retiens un mot découvert au fil des pages.</p>
         </div>
         <div class="feature-card">
           <p class="feature-eyebrow">Explorer</p>
