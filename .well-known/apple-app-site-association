@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "XM42FL67CQ.com.jeanwitt.litrea",
+        "paths": ["/invite/*", "/reset-password", "/email-confirme"]
+      }
+    ]
+  }
+}
