@@ -163,6 +163,16 @@
     border-radius: 34px;
     padding: 10px;
     box-shadow: 0 20px 50px rgba(44,24,16,0.18);
+    cursor: pointer;
+    transition: transform 220ms ease, box-shadow 220ms ease;
+  }
+  .phone-frame:hover, .phone-frame:focus-visible {
+    transform: translateY(-3px) scale(1.015);
+    box-shadow: 0 26px 60px rgba(44,24,16,0.24);
+  }
+  .phone-frame:focus-visible {
+    outline: 2px solid var(--brown);
+    outline-offset: 5px;
   }
   .phone-notch {
     position: absolute;
@@ -182,6 +192,54 @@
     border-radius: 24px;
     background: #000;
     display: block;
+    pointer-events: none;
+  }
+  .preview-hint {
+    font-size: 11px;
+    font-style: italic;
+    color: var(--brown-mid);
+    margin: 16px 0 0;
+  }
+
+  /* ===== Lightbox (aperçu vidéo agrandi) ===== */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(44,24,16,0.85);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 260ms ease;
+    cursor: pointer;
+  }
+  .lightbox.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+  .lightbox .phone-frame {
+    width: min(400px, 90vw, calc(84vh * 9 / 19.5));
+    padding: 14px;
+    border-radius: 44px;
+    cursor: default;
+    transform: none;
+  }
+  .lightbox .phone-frame:hover {
+    transform: none;
+    box-shadow: 0 20px 50px rgba(44,24,16,0.18);
+  }
+  .lightbox .phone-notch {
+    top: 26px;
+    height: 20px;
+  }
+  .lightbox .phone-video {
+    border-radius: 32px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .lightbox { transition: none; }
   }
 
   /* ===== Features ===== */
@@ -400,7 +458,7 @@
   <div class="preview wrap">
     <div class="eyebrow">EN VIDÉO</div>
     <h2 class="preview-title">Litrea en action</h2>
-    <div class="phone-frame">
+    <div class="phone-frame" id="previewPhone" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Agrandir l'aperçu vidéo">
       <div class="phone-notch"></div>
       <video
         class="phone-video"
@@ -411,6 +469,23 @@
         loop
         playsinline
         preload="metadata"
+      ></video>
+    </div>
+    <p class="preview-hint">Cliquer pour agrandir</p>
+  </div>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Aperçu vidéo Litrea en grand" aria-hidden="true">
+    <div class="phone-frame">
+      <div class="phone-notch"></div>
+      <video
+        class="phone-video"
+        id="lightboxVideo"
+        src="./litrea.mp4"
+        poster="./litrea-poster.jpg"
+        muted
+        loop
+        playsinline
+        preload="none"
       ></video>
     </div>
   </div>
@@ -573,6 +648,47 @@
       var v = document.querySelector('.phone-video');
       if (v) { v.pause(); v.removeAttribute('autoplay'); }
     }
+
+    (function () {
+      var trigger = document.getElementById('previewPhone');
+      var lightbox = document.getElementById('lightbox');
+      var lightboxVideo = document.getElementById('lightboxVideo');
+      if (!trigger || !lightbox || !lightboxVideo) return;
+
+      function openLightbox() {
+        lightbox.classList.add('is-open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        lightboxVideo.currentTime = 0;
+        lightboxVideo.play().catch(function () {});
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('is-open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        lightboxVideo.pause();
+      }
+
+      trigger.addEventListener('click', openLightbox);
+      trigger.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openLightbox();
+        }
+      });
+
+      // Ferme uniquement sur un clic dans le fond (à côté du téléphone) —
+      // un clic sur le téléphone agrandi lui-même a `.phone-frame` (ou un
+      // enfant) comme target, jamais `.lightbox`.
+      lightbox.addEventListener('click', function (e) {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox();
+      });
+    })();
   </script>
 
 </body>
