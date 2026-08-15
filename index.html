@@ -312,6 +312,10 @@
     line-height: 1.6;
     margin: 0;
   }
+  .feature-card--wide { grid-column: 1 / -1; }
+  @media (max-width: 640px) {
+    .feature-card--wide { grid-column: auto; }
+  }
 
   .features-more {
     text-align: center;
@@ -527,7 +531,7 @@
         <div class="feature-card feature-card--consigner">
           <p class="feature-eyebrow">Consigner</p>
           <h3 class="feature-title">Notes, citations, mots</h3>
-          <p class="feature-body">Garde une citation qui t'a marqué, note tes impressions, retiens un mot découvert au fil des pages.</p>
+          <p class="feature-body">Garde une citation qui t'a marqué, note tes impressions, retiens les mots appris en lisant avec un quiz pour les réviser.</p>
           <svg class="card-dog dog-desktop" viewBox="0 0 12095 12095" xmlns="http://www.w3.org/2000/svg">
             <path d="M3099.814,9960.846c-21.173,-24.483 -282.408,27.857 -374.109,320.331c-96.427,307.548 -325.885,242.436 -412.087,625.708c261.963,-72.379 912.856,333.532 921.669,-771.109c0.485,-60.776 -35.453,-59.272 -135.473,-174.93Z" style="fill:#f0e6d8;stroke:#6b3a2a;stroke-width:41.67px;"/>
             <path d="M3990.703,10415.356c-23.794,-21.945 -277.48,59.46 -335.685,360.396c-61.205,316.446 -296.533,277.569 -339.056,668.107c252.154,-101.398 944.591,228.687 829.039,-869.929c-6.357,-60.444 -41.898,-54.906 -154.298,-158.574Z" style="fill:#f0e6d8;stroke:#6b3a2a;stroke-width:41.67px;"/>
@@ -559,6 +563,11 @@
           <p class="feature-eyebrow">Statistiques</p>
           <h3 class="feature-title">Tes statistiques de lecture</h3>
           <p class="feature-body">Auteurs préférés, éditeurs les plus lus, genres, langues : Litrea garde une trace précise de ton parcours, avec un bilan annuel prêt à partager.</p>
+        </div>
+        <div class="feature-card feature-card--wide">
+          <p class="feature-eyebrow">Partager</p>
+          <h3 class="feature-title">Une fiche, jamais publique</h3>
+          <p class="feature-body">Connecte-toi à des personnes choisies et envoie une fiche livre en choisissant ce que tu montres : ton statut, tes notes, une citation. Jamais de fil public, jamais de découverte par des inconnus.</p>
         </div>
       </div>
 
