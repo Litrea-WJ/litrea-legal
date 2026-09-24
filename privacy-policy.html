@@ -155,7 +155,7 @@
   <div class="intro">
     <h1>Politique de confidentialité</h1>
     <p>Cette politique de confidentialité décrit comment Litrea collecte, utilise et protège vos données personnelles, conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés.</p>
-    <p class="date">Dernière mise à jour : août 2026</p>
+    <p class="date">Dernière mise à jour : septembre 2026</p>
   </div>
 
   <h2>1. Responsable du traitement</h2>
@@ -174,7 +174,7 @@
   <p><strong>Données de compte</strong></p>
   <ul>
     <li><strong>Adresse email :</strong> utilisée pour la création de compte et l'authentification</li>
-    <li><strong>Prénom :</strong> utilisé pour personnaliser l'expérience dans l'application</li>
+    <li><strong>Prénom :</strong> utilisé pour personnaliser l'expérience dans l'application et affiché aux personnes avec lesquelles vous êtes connecté</li>
   </ul>
 
   <p><strong>Données de lecture</strong></p>
@@ -188,9 +188,18 @@
     <li><strong>Notifications :</strong> identifiants des notifications locales programmées (rappels d'échéance bibliothèque)</li>
   </ul>
 
+  <p><strong>Données de partage (facultatives)</strong></p>
+  <ul>
+    <li><strong>Connexions :</strong> les personnes avec lesquelles vous vous connectez via un lien d'invitation (vous voyez leur prénom, elles voient le vôtre), et le surnom éventuel que vous leur attribuez</li>
+    <li><strong>Groupes :</strong> dossiers personnels que vous créez pour organiser vos connexions, visibles de vous seul</li>
+    <li><strong>Partages :</strong> les fiches de livres que vous choisissez d'envoyer à vos connexions, avec, en option, votre statut de lecture, des notes ou des citations et un message personnel. Le contenu n'est visible que des destinataires désignés, qui peuvent y répondre une fois ; vous pouvez révoquer un partage à tout moment</li>
+    <li><strong>Signalements et blocages :</strong> les signalements que vous effectuez et les utilisateurs que vous bloquez, traités par l'Éditeur pour la modération du service</li>
+  </ul>
+
   <p><strong>Données de paiement</strong></p>
   <ul>
     <li>Les paiements sont traités exclusivement par <strong>Apple App Store</strong> et <strong>Google Play Store</strong>. Litrea ne collecte ni ne stocke aucune donnée bancaire ou de carte de paiement.</li>
+    <li>Le statut de votre abonnement (actif ou expiré) et sa date d'échéance sont enregistrés dans votre profil, à partir des informations transmises par RevenueCat, afin de vous donner accès au service.</li>
   </ul>
 
   <h2>3. Finalités du traitement</h2>
@@ -201,7 +210,8 @@
     <li>Personnaliser votre expérience (salutations, statistiques, recommandations)</li>
     <li>Générer des enrichissements éditoriaux via intelligence artificielle (définitions de mots, distracteurs de quiz, historiques de maisons d'édition, biographies d'auteurs, sélection d'actualités littéraires)</li>
     <li>Vous notifier localement des échéances liées à vos emprunts en bibliothèque</li>
-    <li>Gérer votre abonnement et l'accès aux fonctionnalités premium</li>
+    <li>Permettre les partages que vous décidez d'effectuer avec vos connexions, et modérer les contenus signalés</li>
+    <li>Gérer votre période d'essai gratuite, votre abonnement et l'accès au service</li>
   </ul>
 
   <div class="highlight">
@@ -231,18 +241,15 @@
     <li><strong>Anthropic (Claude AI)</strong> (intelligence artificielle pour les définitions de vocabulaire, distracteurs de quiz, historiques éditeurs, biographies d'auteurs, sélection d'actualités, et transcription des photos de citations) — hébergé aux <strong>États-Unis</strong>. Les transferts sont encadrés par le <strong>Data Processing Addendum (DPA) d'Anthropic</strong> et les <strong>clauses contractuelles types</strong> de la Commission européenne. Les données envoyées sont strictement limitées au contexte fonctionnel (mot à enrichir, nom d'auteur, nom d'éditeur, titres d'articles publics, ou photo d'une page de livre lorsque vous utilisez la transcription automatique de citation) et n'incluent ni votre identité, ni vos notes personnelles, ni vos citations déjà enregistrées. — <a href="https://www.anthropic.com/legal/privacy" target="_blank">politique de confidentialité</a></li>
     <li><strong>NewsAPI</strong> (agrégation d'articles d'actualité littéraire francophones publics) — hébergé aux <strong>États-Unis</strong>. Seules des requêtes thématiques sont envoyées (mots-clés littéraires). Aucune donnée utilisateur ne transite. — <a href="https://newsapi.org/privacy" target="_blank">politique de confidentialité</a></li>
     <li><strong>Expo Application Services (EAS)</strong> (infrastructure de notifications push) — société américaine (650 Industries, Inc.). Lorsque vous recevez une notification (par exemple, un partage reçu d'une connexion), votre prénom, le titre du livre concerné et un identifiant technique de votre appareil (jeton de notification) sont transmis à ce service pour l'acheminement. — <a href="https://expo.dev/privacy" target="_blank">politique de confidentialité</a></li>
+    <li><strong>Resend</strong> (envoi des e-mails d'authentification : confirmation d'inscription et réinitialisation du mot de passe) — société américaine, données stockées aux <strong>États-Unis</strong>. Votre adresse e-mail et le contenu du message (lien de confirmation ou de réinitialisation) lui sont transmis pour l'envoi et conservés 30 jours. Les transferts sont encadrés par le <strong>Data Processing Addendum (DPA) de Resend</strong>, les <strong>clauses contractuelles types</strong> de la Commission européenne et la participation de Resend au <strong>EU-U.S. Data Privacy Framework</strong>. — <a href="https://resend.com/legal" target="_blank">documents légaux</a></li>
   </ul>
 
   <p><strong>Pour la gestion des abonnements</strong></p>
   <ul>
     <li><strong>Apple App Store</strong> et <strong>Google Play Store</strong> — paiements et facturation</li>
+    <li><strong>RevenueCat</strong> (vérification des achats et de l'accès à l'abonnement, sur iOS et Android) — société américaine, données traitées aux <strong>États-Unis</strong>. Seuls votre identifiant de compte (pseudonymisé), les informations d'achat (formule, dates, statut de l'abonnement), la plateforme utilisée et l'adresse IP technique de l'appareil lui sont transmis ; ni votre nom, ni votre adresse e-mail, ni vos données de lecture. Les transferts sont encadrés par le <strong>Data Processing Addendum (DPA) de RevenueCat</strong> et les <strong>clauses contractuelles types</strong> de la Commission européenne. — <a href="https://www.revenuecat.com/privacy" target="_blank">politique de confidentialité</a></li>
   </ul>
 
-  <p><strong>Prévus prochainement</strong></p>
-  <ul>
-    <li><strong>RevenueCat</strong> (gestion technique des abonnements in-app, multi-plateforme, pour les fonctionnalités premium à venir) — <a href="https://www.revenuecat.com/privacy" target="_blank">politique de confidentialité</a></li>
-    <li><strong>Resend</strong> (envoi d'emails transactionnels — confirmations, notifications administratives, communications beta) — fournisseur EU-compatible.</li>
-  </ul>
 
   <div class="highlight">
     Aucune de vos données de lecture (livres, notes personnelles, citations, mots, prêts, emprunts) n'est partagée avec ces services tiers à des fins publicitaires ou commerciales. La liste des sous-traitants est mise à jour à chaque évolution de l'application.
