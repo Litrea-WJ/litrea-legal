@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aide · Litrea</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap');
+
+    :root {
+      --brun: #6B3A2A;
+      --brun-clair: #A0522D;
+      --creme: #FDF6EC;
+      --texte: #2C1810;
+      --texte-secondaire: #6B5744;
+      --bordure: #E8D5B5;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Source Serif 4', Georgia, serif;
+      background-color: var(--creme);
+      color: var(--texte);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    header {
+      background-color: var(--creme);
+      padding: 40px 24px 32px;
+      text-align: center;
+      border-bottom: 1px solid var(--bordure);
+    }
+
+    header .logo-img {
+      width: 96px;
+      height: 96px;
+      display: block;
+      margin: 0 auto 12px;
+    }
+
+    header .tagline {
+      font-size: 14px;
+      color: var(--texte-secondaire);
+      font-style: italic;
+      letter-spacing: 1px;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    .intro {
+      background: white;
+      border: 1px solid var(--bordure);
+      border-radius: 8px;
+      padding: 32px;
+      margin-bottom: 48px;
+    }
+
+    .intro p {
+      color: var(--texte-secondaire);
+      font-size: 15px;
+      font-style: italic;
+    }
+
+    .intro .date {
+      font-size: 13px;
+      color: var(--brun-clair);
+      margin-top: 12px;
+      font-style: normal;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 600;
+      color: var(--brun);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--brun);
+      margin: 48px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--bordure);
+    }
+
+    h2:first-of-type { margin-top: 0; }
+
+    h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 600;
+      font-style: italic;
+      color: var(--brun);
+      margin: 24px 0 8px;
+    }
+
+    p { margin-bottom: 16px; }
+
+    ul {
+      margin: 0 0 16px 24px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+      color: var(--texte-secondaire);
+    }
+
+    ul li strong { color: var(--texte); }
+
+    a {
+      color: var(--brun-clair);
+      text-decoration: none;
+      border-bottom: 1px solid var(--bordure);
+    }
+
+    a:hover { border-bottom-color: var(--brun-clair); }
+
+    .sommaire {
+      background: white;
+      border: 1px solid var(--bordure);
+      border-radius: 8px;
+      padding: 24px 32px;
+      margin-bottom: 48px;
+    }
+
+    .sommaire h2 {
+      margin: 0 0 12px;
+      padding: 0;
+      border: none;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .sommaire ul {
+      margin: 0;
+      columns: 2;
+      column-gap: 32px;
+    }
+
+    .sommaire li {
+      margin-bottom: 6px;
+      break-inside: avoid;
+    }
+
+    /* Icônes de la barre de navigation : pastille ronde façon app */
+    .onglets {
+      list-style: none;
+      margin: 0 0 24px 0;
+      padding: 0;
+    }
+
+    .onglets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--bordure);
+      color: var(--texte-secondaire);
+    }
+
+    .onglets li:last-child { border-bottom: none; }
+
+    .pastille {
+      flex: none;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--brun);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .onglets strong { color: var(--texte); }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0 24px;
+      font-size: 15px;
+    }
+
+    table th, table td {
+      text-align: left;
+      padding: 8px 12px 8px 0;
+      border-bottom: 1px solid var(--bordure);
+      color: var(--texte-secondaire);
+      vertical-align: top;
+    }
+
+    table th {
+      color: var(--texte);
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid var(--bordure);
+      font-size: 13px;
+      color: var(--texte-secondaire);
+    }
+
+    footer a { font-size: 13px; }
+
+    @media (max-width: 480px) {
+      .sommaire ul { columns: 1; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img class="logo-img" src="logo.svg" alt="Litrea">
+  <span class="tagline">ton univers littéraire</span>
+</header>
+
+<div class="container">
+
+  <div class="intro">
+    <h1>Aide</h1>
+    <p>Le guide de Litrea : où trouver quoi, et comment. Repère-toi grâce au sommaire, ou lis-le en entier une fois pour découvrir ce que tu ne savais pas encore possible.</p>
+    <p class="date">Dernière mise à jour : septembre 2026</p>
+  </div>
+
+  <div class="sommaire">
+    <h2>Sommaire</h2>
+    <ul>
+      <li><a href="#reperer">Se repérer dans l'app</a></li>
+      <li><a href="#ajouter">Ajouter un livre</a></li>
+      <li><a href="#accueil">L'accueil</a></li>
+      <li><a href="#bibliotheque">Ta bibliothèque</a></li>
+      <li><a href="#journal">Ton journal</a></li>
+      <li><a href="#statuts">Statuts et provenance</a></li>
+      <li><a href="#fiche">La fiche d'un livre</a></li>
+      <li><a href="#carnets">Tes carnets</a></li>
+      <li><a href="#citations-mots">Citations et mots appris</a></li>
+      <li><a href="#metiers">Métiers du livre</a></li>
+      <li><a href="#social">Partage social</a></li>
+      <li><a href="#prets-dons">Prêts et dons</a></li>
+      <li><a href="#profil">Ton profil</a></li>
+      <li><a href="#abonnement">Essai et abonnement</a></li>
+      <li><a href="#compte">Ton compte et tes données</a></li>
+    </ul>
+  </div>
+
+  <h2 id="reperer">Se repérer dans l'app</h2>
+  <p>Tout se joue depuis les six icônes tout en bas de l'écran (elles n'ont pas de texte, seulement une icône) :</p>
+  <ul class="onglets">
+    <li><span class="pastille">1</span><span><strong>Maison</strong> : l'accueil. Tes actions rapides, ta lecture en cours, les actualités littéraires.</span></li>
+    <li><span class="pastille">2</span><span><strong>Étagère</strong> : ta bibliothèque, tous les livres que tu as scannés.</span></li>
+    <li><span class="pastille">3</span><span><strong>Livre ouvert</strong> : ton journal, un calendrier de tes lectures jour par jour.</span></li>
+    <li><span class="pastille">4</span><span><strong>Carnet</strong> : tes mots appris, citations, séries, thèmes, notes, et les catalogues des prix et mouvements littéraires.</span></li>
+    <li><span class="pastille">5</span><span><strong>Mallette</strong> : « Métiers du livre », pour chercher un auteur, un éditeur ou un traducteur dans tout le catalogue.</span></li>
+    <li><span class="pastille">6</span><span><strong>Silhouettes</strong> : ton cercle littéraire, connexions et groupes de partage.</span></li>
+  </ul>
+  <p>Deux autres icônes, en haut à droite de l'accueil : un <strong>graphique</strong> ouvre ton tableau de bord de lecture, et un <strong>rond avec un profil</strong> ouvre tes réglages.</p>
+
+  <h2 id="ajouter">Ajouter un livre</h2>
+  <p>Depuis l'accueil, touche le premier bouton, <strong>Ajouter un livre</strong> (icône code-barres). Trois choix s'offrent à toi :</p>
+  <ul>
+    <li><strong>Scanner un livre :</strong> vise le code-barres ISBN, au dos du livre. Litrea récupère automatiquement le titre, l'auteur, l'éditeur et la couverture depuis des sources bibliographiques (Electre, la BnF...).</li>
+    <li><strong>Scanner plusieurs livres :</strong> pour cataloguer toute une pile ou une étagère d'un coup, sans repasser par le formulaire entre chaque livre. Une liste en bas de l'écran compte les livres déjà scannés ; touche-la pour la dérouler.</li>
+    <li><strong>Saisie manuelle :</strong> pour un livre sans code-barres exploitable (édition très ancienne, livre étranger...) ou si le scan ne trouve rien.</li>
+  </ul>
+  <h3>Le code-barres ne se scanne pas</h3>
+  <p>Rapproche-toi un peu, ou touche le bouton de zoom en haut à droite de l'écran de scan (jusqu'à 3×, réglé sur 1,5× par défaut) : certaines éditions ont un code-barres minuscule. Un livre ancien porte parfois deux codes-barres : cherche celui qui commence par <strong>978</strong> ou <strong>979</strong>.</p>
+  <h3>Une information est fausse sur la fiche</h3>
+  <p>Les sources bibliographiques ne sont pas parfaites. Corrige n'importe quel champ à tout moment via <strong>Modifier la fiche</strong>, depuis la fiche du livre.</p>
+
+  <h2 id="accueil">L'accueil</h2>
+  <p>Sous ton nom, quatre boutons donnent un accès direct à :</p>
+  <ul>
+    <li><strong>Ajouter un livre</strong> (code-barres) ;</li>
+    <li><strong>Mot</strong> (icône « Aa ») : note un mot de vocabulaire appris à l'instant ;</li>
+    <li><strong>Citation</strong> (bulle) : note une phrase qui t'a marquée ;</li>
+    <li><strong>Super-recherche</strong> (loupe) : cherche par titre, auteur, éditeur, traducteur, collection ou prix littéraire, dans tout le catalogue Litrea, pas seulement tes propres livres.</li>
+  </ul>
+  <p>Plus bas : le livre que tu es en train de lire, une citation du jour tirée de tes propres notes, et les actualités littéraires (parutions, prix, portraits d'auteurs). Une fois assez de lectures dans l'année, un bandeau propose ton <strong>bilan de l'année</strong>.</p>
+
+  <h2 id="bibliotheque">Ta bibliothèque</h2>
+  <p>L'icône étagère (2ᵉ en bas) réunit tous les livres que tu as scannés ou saisis, quel que soit leur statut de lecture. Une barre de recherche et des filtres t'aident à en retrouver un précis.</p>
+
+  <h2 id="journal">Ton journal</h2>
+  <p>L'icône livre ouvert (3ᵉ en bas) affiche un calendrier : chaque jour montre le ou les livres que tu lisais à ce moment-là. Change de mois ou d'année en haut de l'écran.</p>
+
+  <h2 id="statuts">Statuts et provenance</h2>
+  <p>Deux informations distinctes, volontairement séparées, réglables depuis la fiche d'un livre :</p>
+  <ul>
+    <li><strong>Le statut</strong> dit où tu en es dans ta lecture : sur ma liste, en cours, lu, coup de cœur.</li>
+    <li><strong>La provenance</strong> dit comment tu as ce livre : tu le possèdes, on te l'a prêté, ou il vient d'une bibliothèque.</li>
+  </ul>
+  <p>Un livre emprunté que tu es en train de lire porte donc les deux à la fois : provenance <em>Emprunté</em>, statut <em>En cours</em>. Le tableau de bord (icône graphique de l'accueil), lui, ne compte que les livres marqués <em>Lus</em> : c'est ton bilan de lecture, pas ton inventaire.</p>
+
+  <h2 id="fiche">La fiche d'un livre</h2>
+  <p>Touche un livre, où que tu le voies dans l'app, pour ouvrir sa fiche. Touche n'importe quel champ pour le corriger ou le compléter via <strong>Modifier la fiche</strong>. En faisant défiler la fiche, tu retrouves aussi tes citations et notes sur ce livre, les mots que tu y as appris, les outils de prêt et de don, et pour une série, ta progression dans les tomes.</p>
+
+  <h2 id="carnets">Tes carnets</h2>
+  <p>L'icône carnet (4ᵉ en bas) ouvre <strong>Mes carnets</strong>, sept entrées :</p>
+  <table>
+    <tr><th>Entrée</th><th>Ce qu'elle contient</th></tr>
+    <tr><td>Mes mots appris</td><td>ton vocabulaire, avec quiz</td></tr>
+    <tr><td>Mes citations</td><td>tes citations, avec quiz</td></tr>
+    <tr><td>Mes séries</td><td>ta progression dans chaque série</td></tr>
+    <tr><td>Mes thèmes</td><td>tes livres regroupés par thème</td></tr>
+    <tr><td>Mes notes</td><td>tes notes de lecture libres, cherchables</td></tr>
+    <tr><td>Prix littéraires</td><td>le catalogue des prix, par catégorie et par année</td></tr>
+    <tr><td>Mouvements littéraires</td><td>les grands courants, avec les œuvres qui s'y rattachent</td></tr>
+  </table>
+
+  <h2 id="citations-mots">Citations et mots appris</h2>
+  <p>Depuis <strong>Mes citations</strong> ou <strong>Mes mots appris</strong> (dans Carnets), tu peux :</p>
+  <ul>
+    <li>regrouper par thème, par auteur ou par livre, selon ce que tu cherches ;</li>
+    <li>tester ta mémoire avec les quiz vocabulaire et citations, générés à partir de ce que tu as réellement noté.</li>
+  </ul>
+  <p>Quand tu notes une citation ou un mot, le livre que tu es en train de lire est proposé en premier dans la liste « Choisir un livre », puisque c'est presque toujours de là qu'ils viennent.</p>
+
+  <h2 id="metiers">Métiers du livre</h2>
+  <p>L'icône mallette (5ᵉ en bas) ouvre un annuaire du catalogue complet, pas seulement tes livres, avec trois onglets : <strong>Auteurs</strong>, <strong>Éditeurs</strong>, <strong>Traducteurs</strong>. La fiche d'un auteur réunit tout son catalogue Electre : ses parutions à venir, les autres livres à découvrir, et ceux déjà dans ta bibliothèque.</p>
+
+  <h2 id="social">Partage social</h2>
+  <p>L'icône silhouettes (6ᵉ en bas) ouvre ton <strong>cercle littéraire</strong>, avec trois entrées :</p>
+  <ul>
+    <li><strong>Mes connexions :</strong> Litrea n'a pas d'annuaire à chercher par nom. Partage ton lien personnel à un ami, ou ouvre le sien, pour vous connecter.</li>
+    <li><strong>Mes groupes :</strong> des cercles de lecture entre connexions.</li>
+    <li><strong>Mes fiches partagées :</strong> les livres qu'on t'a envoyés, et ceux que tu as partagés.</li>
+  </ul>
+
+  <h2 id="prets-dons">Prêts et dons</h2>
+  <p>Depuis la fiche d'un livre, indique que tu le prêtes ou que tu le donnes. Litrea garde la trace de qui l'a, et te rappelle les prêts en cours dans ton profil.</p>
+
+  <h2 id="profil">Ton profil</h2>
+  <p>L'icône profil, en haut à droite de l'accueil, ouvre tes réglages. Elle centralise aussi tes prêts, emprunts, dons et cadeaux reçus.</p>
+
+  <h2 id="abonnement">Essai et abonnement</h2>
+  <p>Litrea est gratuite pendant le premier mois suivant ton inscription. Passé ce délai, un abonnement mensuel ou annuel est nécessaire pour continuer à utiliser l'application.</p>
+  <p>L'abonnement est à renouvellement automatique, résiliable à tout moment depuis les réglages de ton compte Apple ou Google (le mois ou l'année en cours reste dû).</p>
+
+  <h2 id="compte">Ton compte et tes données</h2>
+  <p>Tout se passe dans ton profil (icône profil, en haut à droite de l'accueil), en bas de l'écran : les liens vers nos <a href="cgu.html">Conditions Générales d'Utilisation</a> et notre <a href="privacy-policy.html">Politique de confidentialité</a>, juste au-dessus du bouton <strong>Supprimer mon compte</strong>.</p>
+  <p>Une question qui ne trouve pas sa réponse ici ? Écris-nous à <a href="mailto:contact@litrea.fr">contact@litrea.fr</a>.</p>
+
+</div>
+
+<footer>
+  <p>Litrea · © 2026 Jean Wittmann · <a href="cgu.html">CGU</a> · <a href="privacy-policy.html">Politique de confidentialité</a></p>
+</footer>
+
+<script>
+  // Défilement manuel vers le chapitre, plutôt que compter sur le
+  // comportement natif des ancres : certains visualiseurs de fichiers
+  // (aperçus intégrés, WebView) ne le déclenchent pas correctement.
+  document.querySelectorAll('.sommaire a[href^="#"]').forEach(function (lien) {
+    lien.addEventListener('click', function (evenement) {
+      var cible = document.getElementById(lien.getAttribute('href').slice(1));
+      if (!cible) return;
+      evenement.preventDefault();
+      cible.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      history.pushState(null, '', lien.getAttribute('href'));
+    });
+  });
+</script>
+
+</body>
+</html>

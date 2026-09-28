@@ -27,24 +27,22 @@
     }
 
     header {
-      background-color: var(--brun);
-      padding: 48px 24px 40px;
+      background-color: var(--creme);
+      padding: 40px 24px 32px;
       text-align: center;
+      border-bottom: 1px solid var(--bordure);
     }
 
-    header .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 42px;
-      font-weight: 600;
-      color: #fff;
-      letter-spacing: 4px;
+    header .logo-img {
+      width: 96px;
+      height: 96px;
       display: block;
-      margin-bottom: 8px;
+      margin: 0 auto 12px;
     }
 
     header .tagline {
       font-size: 14px;
-      color: rgba(255,255,255,0.65);
+      color: var(--texte-secondaire);
       font-style: italic;
       letter-spacing: 1px;
     }
@@ -146,7 +144,7 @@
 <body>
 
 <header>
-  <span class="logo">Litrea</span>
+  <img class="logo-img" src="logo.svg" alt="Litrea">
   <span class="tagline">ton univers littéraire</span>
 </header>
 
