@@ -10,7 +10,7 @@
     :root {
       --brun: #6B3A2A;
       --brun-clair: #A0522D;
-      --creme: #FDF6EC;
+      --creme: #F5EBD8;
       --texte: #2C1810;
       --texte-secondaire: #6B5744;
       --bordure: #E8D5B5;
@@ -20,7 +20,10 @@
 
     body {
       font-family: 'Source Serif 4', Georgia, serif;
-      background-color: var(--creme);
+      background: var(--creme);
+      background-image:
+        radial-gradient(ellipse 900px 500px at 50% -10%, rgba(255,255,255,0.5), transparent),
+        radial-gradient(ellipse 800px 400px at 90% 110%, rgba(107,58,42,0.05), transparent);
       color: var(--texte);
       font-size: 17px;
       line-height: 1.8;
@@ -34,8 +37,8 @@
     }
 
     header .logo-img {
-      width: 96px;
-      height: 96px;
+      width: 140px;
+      height: 140px;
       display: block;
       margin: 0 auto 12px;
     }
