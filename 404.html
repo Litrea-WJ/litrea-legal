@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Litrea · Invitation</title>
-<meta name="description" content="Tu as reçu une invitation Litrea. L'application arrive bientôt sur l'App Store et Google Play.">
+<meta name="description" content="Tu as reçu une invitation Litrea. L'application est disponible sur l'App Store et Google Play.">
 <meta name="robots" content="noindex">
 <meta property="og:title" content="Tu as reçu une invitation Litrea">
-<meta property="og:description" content="L'application arrive bientôt sur l'App Store et Google Play.">
+<meta property="og:description" content="L'application est disponible sur l'App Store et Google Play.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://litrea.fr/og-image.png">
 <meta property="og:image:width" content="1024">
@@ -15,7 +15,7 @@
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Tu as reçu une invitation Litrea">
-<meta name="twitter:description" content="L'application arrive bientôt sur l'App Store et Google Play.">
+<meta name="twitter:description" content="L'application est disponible sur l'App Store et Google Play.">
 <meta name="twitter:image" content="https://litrea.fr/og-image.png">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -99,9 +99,15 @@
     line-height: 1.65;
   }
 
-  .badge-soon {
-    display: inline-block;
+  .stores {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
     margin-top: 26px;
+  }
+  .badge-store {
+    display: inline-block;
     padding: 7px 18px;
     border: 1px solid var(--brown-mid);
     border-radius: 999px;
@@ -109,8 +115,12 @@
     letter-spacing: 1.5px;
     text-transform: uppercase;
     color: var(--brown);
-    opacity: 0.85;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
   }
+  .badge-store:hover { background: rgba(255,255,255,0.45); }
+  .badge-store:focus-visible { outline: 2px solid var(--brown); outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { .badge-store { transition: none; } }
 
   .back-link {
     display: inline-block;
@@ -166,12 +176,15 @@
     <p class="hero-lead">
       L'application n'est pas encore installée sur cet appareil. Litrea,
       le journal de lecture pensé pour celles et ceux qui aiment les
-      livres, arrive bientôt sur l'App&nbsp;Store et Google&nbsp;Play —
-      reviens ouvrir ce lien une fois l'app installée pour rejoindre ton
+      livres, est disponible sur l'App&nbsp;Store et Google&nbsp;Play.
+      Installe-la, puis reviens ouvrir ce lien pour rejoindre ton
       invitation.
     </p>
 
-    <div class="badge-soon">Bientôt disponible</div>
+    <div class="stores">
+      <a class="badge-store" href="https://apps.apple.com/app/id6790877791">App Store</a>
+      <a class="badge-store" href="https://play.google.com/store/apps/details?id=com.jeanwitt.litrea">Google Play</a>
+    </div>
 
     <div>
       <a class="back-link" href="/">Découvrir Litrea</a>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Litrea · Ton univers littéraire</title>
-<meta name="description" content="Litrea, le journal de lecture pensé pour celles et ceux qui aiment les livres. Bientôt disponible sur l'App Store et Google Play.">
+<meta name="description" content="Litrea, le journal de lecture pensé pour celles et ceux qui aiment les livres. Disponible sur l'App Store et Google Play.">
 <meta property="og:title" content="Litrea · Ton univers littéraire">
 <meta property="og:description" content="Litrea, le journal de lecture pensé pour celles et ceux qui aiment les livres.">
 <meta property="og:type" content="website">
@@ -124,7 +124,7 @@
     line-height: 1.65;
   }
 
-  .badge-soon {
+  .badge-dispo {
     display: inline-block;
     margin-top: 22px;
     padding: 7px 18px;
@@ -134,8 +134,11 @@
     letter-spacing: 1.5px;
     text-transform: uppercase;
     color: var(--brown);
-    opacity: 0.85;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
   }
+  .badge-dispo:hover { background: rgba(255,255,255,0.45); }
+  .badge-dispo:focus-visible { outline: 2px solid var(--brown); outline-offset: 3px; }
 
   /* ===== Intro ===== */
   .intro {
@@ -359,26 +362,30 @@
     gap: 16px;
     flex-wrap: wrap;
   }
-  .qr-placeholder {
-    width: 140px;
-    padding: 18px 12px 14px;
-    border: 1.5px dashed var(--brown-mid);
+  .store-card {
+    display: block;
+    width: 156px;
+    padding: 16px 12px 14px;
+    border: 1px solid var(--brown-mid);
     border-radius: 8px;
-    background: rgba(255,255,255,0.35);
+    background: rgba(255,255,255,0.45);
+    color: var(--brown);
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
   }
+  .store-card:hover { background: rgba(255,255,255,0.75); transform: translateY(-2px); }
+  .store-card:focus-visible { outline: 2px solid var(--brown); outline-offset: 3px; }
   .qr-box {
-    width: 96px;
-    height: 96px;
+    display: block;
+    width: 120px;
+    height: 120px;
     margin: 0 auto 12px;
-    border: 1px solid var(--brown-light);
     border-radius: 4px;
-    background: var(--brown-pale);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
   }
-  .qr-box svg { width: 34px; height: 34px; opacity: 0.35; }
+  .qr-box img { display: block; width: 100%; height: 100%; }
   .qr-label {
+    display: block;
     font-size: 11px;
     letter-spacing: 1px;
     color: var(--brown);
@@ -387,10 +394,14 @@
     margin: 0 0 3px;
   }
   .qr-sub {
-    font-size: 11px;
+    display: block;
+    font-size: 12px;
     font-style: italic;
-    color: var(--brown-mid);
-    margin: 0;
+    color: var(--brown);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .store-card, .badge-dispo { transition: none; }
+    .store-card:hover { transform: none; }
   }
 
   /* ===== Mascotte ===== */
@@ -457,7 +468,7 @@
       et tout ce qui gravite autour d'eux.
     </p>
 
-    <div class="badge-soon">Bientôt disponible</div>
+    <a class="badge-dispo" href="#telecharger">Disponible sur iPhone et Android</a>
   </div>
 
   <div class="intro wrap">
@@ -583,26 +594,22 @@
     </div>
   </div>
 
-  <div class="download wrap">
+  <div class="download wrap" id="telecharger">
     <div class="eyebrow">TÉLÉCHARGER</div>
-    <h2>Bientôt disponible</h2>
-    <p>Litrea arrive prochainement sur l'App&nbsp;Store et Google&nbsp;Play.</p>
+    <h2>Disponible maintenant</h2>
+    <p>Sur l'App&nbsp;Store et Google&nbsp;Play. Depuis un ordinateur, scanne le code avec ton téléphone.</p>
 
     <div class="qr-row">
-      <div class="qr-placeholder">
-        <div class="qr-box">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#6b3a2a" stroke-width="1.4"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM19 14h2v2h-2zM14 19h2v2h-2zM19 19h2v2h-2z"/></svg>
-        </div>
-        <p class="qr-label">iPhone</p>
-        <p class="qr-sub">QR code à venir</p>
-      </div>
-      <div class="qr-placeholder">
-        <div class="qr-box">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#6b3a2a" stroke-width="1.4"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM19 14h2v2h-2zM14 19h2v2h-2zM19 19h2v2h-2z"/></svg>
-        </div>
-        <p class="qr-label">Android</p>
-        <p class="qr-sub">QR code à venir</p>
-      </div>
+      <a class="store-card" href="https://apps.apple.com/app/id6790877791">
+        <span class="qr-box"><img src="qr-app-store.svg" alt="QR code vers Litrea sur l'App Store" width="120" height="120"></span>
+        <span class="qr-label">iPhone</span>
+        <span class="qr-sub">Télécharger sur l'App&nbsp;Store</span>
+      </a>
+      <a class="store-card" href="https://play.google.com/store/apps/details?id=com.jeanwitt.litrea">
+        <span class="qr-box"><img src="qr-google-play.svg" alt="QR code vers Litrea sur Google Play" width="120" height="120"></span>
+        <span class="qr-label">Android</span>
+        <span class="qr-sub">Disponible sur Google&nbsp;Play</span>
+      </a>
     </div>
   </div>
 
