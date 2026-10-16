@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Télécharger Litrea</title>
+<meta name="description" content="Litrea, ton journal de lecture, sur l'App Store et Google Play.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Télécharger Litrea">
+<meta property="og:description" content="Ton journal de lecture, sur l'App Store et Google Play.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://litrea.fr/og-image.png">
+<meta property="og:locale" content="fr_FR">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script>
+  // Lien du QR code des marque-pages (litrea.fr/app) : l'iPhone et l'iPad
+  // partent vers l'App Store, Android vers Google Play, avant même
+  // l'affichage. Sur ordinateur, la page propose les deux.
+  (function () {
+    var APP_STORE = 'https://apps.apple.com/app/id6790877791';
+    var GOOGLE_PLAY = 'https://play.google.com/store/apps/details?id=com.jeanwitt.litrea';
+    var ua = navigator.userAgent || '';
+    // Android d'abord : la détection de l'iPad ci-dessous (un « Mac » à écran
+    // tactile) ne doit jamais rattraper un téléphone Android.
+    var android = /Android/i.test(ua);
+    // iPadOS se présente comme un Mac : on le reconnaît à l'écran tactile.
+    var ios = !android && (/iPhone|iPad|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1));
+    if (android) location.replace(GOOGLE_PLAY);
+    else if (ios) location.replace(APP_STORE);
+  })();
+</script>
+<style>
+  :root {
+    --brown: #6B3A2A;
+    --brown-mid: #C4A882;
+    --cream: #F5EBD8;
+    --ink: #2C1810;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: Georgia, 'Times New Roman', serif;
+    min-height: 100vh;
+    line-height: 1.5;
+    text-align: center;
+  }
+  .wrap { max-width: 520px; margin: 0 auto; padding: 72px 28px 48px; }
+  .eyebrow {
+    display: flex; align-items: center; justify-content: center; gap: 14px;
+    font-size: 11px; letter-spacing: 3px; font-weight: 600;
+    color: var(--brown-mid); text-transform: uppercase; white-space: nowrap;
+  }
+  .eyebrow::before, .eyebrow::after {
+    content: ''; width: 28px; height: 1px; background: var(--brown-mid); opacity: 0.6;
+  }
+  .logo { width: 160px; height: auto; margin: 22px auto 0; display: block; }
+  h1 {
+    font-size: clamp(24px, 6vw, 30px); font-style: italic; font-weight: 400;
+    color: var(--brown); margin: 26px 0 0; text-wrap: balance;
+  }
+  .stores { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 28px; }
+  .badge-store {
+    display: inline-block; padding: 9px 20px;
+    border: 1px solid var(--brown-mid); border-radius: 999px;
+    font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--brown); text-decoration: none;
+  }
+  .badge-store:hover { background: rgba(255,255,255,0.45); }
+  .badge-store:focus-visible { outline: 2px solid var(--brown); outline-offset: 3px; }
+  .retour {
+    display: inline-block; margin-top: 40px; color: var(--brown); opacity: 0.8;
+    text-decoration: none; font-size: 13px; border-bottom: 1px solid var(--brown-mid);
+  }
+  .retour:hover { opacity: 1; }
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <p class="eyebrow">Journal de lecture</p>
+    <img class="logo" src="/logo.svg" alt="Litrea">
+    <h1>Télécharge Litrea sur ton téléphone</h1>
+    <div class="stores">
+      <a class="badge-store" href="https://apps.apple.com/app/id6790877791">App Store</a>
+      <a class="badge-store" href="https://play.google.com/store/apps/details?id=com.jeanwitt.litrea">Google Play</a>
+    </div>
+    <a class="retour" href="/">Découvrir Litrea</a>
+  </main>
+</body>
+</html>
