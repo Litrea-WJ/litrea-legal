@@ -19,6 +19,27 @@
 <meta name="twitter:image" content="https://litrea.fr/og-image.png">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script>
+  // Lien d'invitation (litrea.fr/invite/<id>) ouvert sur un téléphone où
+  // Litrea n'est pas installée (sinon l'app s'ouvre directement) : on part
+  // tout de suite sur le bon store, comme litrea.fr/app. Sur Android, l'id
+  // de l'invitation voyage dans le lien Google Play (referrer) et l'app le
+  // retrouve à la première ouverture. Sur ordinateur, la page reste affichée.
+  (function () {
+    var m = location.pathname.match(/^\/invite\/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\/?$/i);
+    if (!m) return;
+    var ua = navigator.userAgent || '';
+    // Android d'abord : la détection de l'iPad ci-dessous (un « Mac » à écran
+    // tactile) ne doit jamais rattraper un téléphone Android.
+    var android = /Android/i.test(ua);
+    var ios = !android && (/iPhone|iPad|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1));
+    if (android) {
+      location.replace('https://play.google.com/store/apps/details?id=com.jeanwitt.litrea&referrer=' + encodeURIComponent('invite=' + m[1].toLowerCase()));
+    } else if (ios) {
+      location.replace('https://apps.apple.com/app/id6790877791');
+    }
+  })();
+</script>
 <style>
   :root {
     --brown: #6B3A2A;
