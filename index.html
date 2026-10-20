@@ -124,21 +124,32 @@
     line-height: 1.65;
   }
 
-  .badge-dispo {
+  /* Annonce de la sortie (20 oct. 2026) */
+  .annonce {
+    font-size: 16px;
+    color: var(--brown);
+    max-width: 440px;
+    margin: 26px auto 0;
+    line-height: 1.55;
+    text-wrap: balance;
+  }
+  .annonce strong { font-weight: 700; }
+
+  .cta {
     display: inline-block;
-    margin-top: 22px;
-    padding: 7px 18px;
-    border: 1px solid var(--brown-mid);
+    margin-top: 16px;
+    padding: 11px 26px;
     border-radius: 999px;
-    font-size: 12px;
+    background: var(--brown);
+    color: var(--brown-pale);
+    font-size: 12.5px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: var(--brown);
     text-decoration: none;
     transition: background-color 0.2s ease;
   }
-  .badge-dispo:hover { background: rgba(255,255,255,0.45); }
-  .badge-dispo:focus-visible { outline: 2px solid var(--brown); outline-offset: 3px; }
+  .cta:hover { background: var(--ink); }
+  .cta:focus-visible { outline: 2px solid var(--brown); outline-offset: 3px; }
 
   /* ===== Intro ===== */
   .intro {
@@ -354,54 +365,43 @@
     color: var(--brown);
     opacity: 0.8;
     margin: 0 0 24px;
+    text-wrap: balance;
   }
 
-  .qr-row {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-  .store-card {
-    display: block;
-    width: 156px;
-    padding: 16px 12px 14px;
+  /* Un seul QR code (litrea.fr/app), le même que sur les marque-pages :
+     l'iPhone part vers l'App Store, Android vers Google Play. */
+  .qr-carte {
+    display: inline-block;
+    padding: 14px;
     border: 1px solid var(--brown-mid);
     border-radius: 8px;
-    background: rgba(255,255,255,0.45);
+    background: #fff;
+  }
+  .qr-carte img { width: 150px; height: 150px; }
+
+  .stores {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 22px;
+  }
+  .badge-store {
+    display: inline-block;
+    padding: 8px 20px;
+    border: 1px solid var(--brown-mid);
+    border-radius: 999px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
     color: var(--brown);
     text-decoration: none;
-    transition: background-color 0.2s ease, transform 0.2s ease;
+    transition: background-color 0.2s ease;
   }
-  .store-card:hover { background: rgba(255,255,255,0.75); transform: translateY(-2px); }
-  .store-card:focus-visible { outline: 2px solid var(--brown); outline-offset: 3px; }
-  .qr-box {
-    display: block;
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 12px;
-    border-radius: 4px;
-    overflow: hidden;
-  }
-  .qr-box img { display: block; width: 100%; height: 100%; }
-  .qr-label {
-    display: block;
-    font-size: 11px;
-    letter-spacing: 1px;
-    color: var(--brown);
-    opacity: 0.75;
-    text-transform: uppercase;
-    margin: 0 0 3px;
-  }
-  .qr-sub {
-    display: block;
-    font-size: 12px;
-    font-style: italic;
-    color: var(--brown);
-  }
+  .badge-store:hover { background: rgba(255,255,255,0.6); }
+  .badge-store:focus-visible { outline: 2px solid var(--brown); outline-offset: 3px; }
   @media (prefers-reduced-motion: reduce) {
-    .store-card, .badge-dispo { transition: none; }
-    .store-card:hover { transform: none; }
+    .cta, .badge-store { transition: none; }
   }
 
   /* ===== Mascotte ===== */
@@ -468,7 +468,8 @@
       et tout ce qui gravite autour d'eux.
     </p>
 
-    <a class="badge-dispo" href="#telecharger">Disponible sur iPhone et Android</a>
+    <p class="annonce"><strong>Ça y est&nbsp;!</strong> Litrea est disponible sur l'App&nbsp;Store et Google&nbsp;Play.</p>
+    <a class="cta" href="#telecharger">Télécharger Litrea</a>
   </div>
 
   <div class="intro wrap">
@@ -596,20 +597,16 @@
 
   <div class="download wrap" id="telecharger">
     <div class="eyebrow">TÉLÉCHARGER</div>
-    <h2>Disponible maintenant</h2>
-    <p>Sur l'App&nbsp;Store et Google&nbsp;Play. Depuis un ordinateur, scanne le code avec ton téléphone.</p>
+    <h2>Litrea est sur les stores</h2>
+    <p>Un seul code pour iPhone et Android&nbsp;: scanne-le avec ton téléphone, il t'emmène directement sur le bon store.</p>
 
-    <div class="qr-row">
-      <a class="store-card" href="https://apps.apple.com/app/id6790877791">
-        <span class="qr-box"><img src="qr-app-store.svg" alt="QR code vers Litrea sur l'App Store" width="120" height="120"></span>
-        <span class="qr-label">iPhone</span>
-        <span class="qr-sub">Télécharger sur l'App&nbsp;Store</span>
-      </a>
-      <a class="store-card" href="https://play.google.com/store/apps/details?id=com.jeanwitt.litrea">
-        <span class="qr-box"><img src="qr-google-play.svg" alt="QR code vers Litrea sur Google Play" width="120" height="120"></span>
-        <span class="qr-label">Android</span>
-        <span class="qr-sub">Disponible sur Google&nbsp;Play</span>
-      </a>
+    <div class="qr-carte">
+      <img src="qr-litrea-app.svg" alt="QR code : télécharger Litrea sur l'App Store ou Google Play" width="150" height="150">
+    </div>
+
+    <div class="stores">
+      <a class="badge-store" href="https://apps.apple.com/app/id6790877791">App Store</a>
+      <a class="badge-store" href="https://play.google.com/store/apps/details?id=com.jeanwitt.litrea">Google Play</a>
     </div>
   </div>
 
