@@ -254,6 +254,7 @@
     <ul>
       <li><a href="#reperer">Se repérer dans l'app</a></li>
       <li><a href="#ajouter">Ajouter un livre</a></li>
+      <li><a href="#importer">Importer ta bibliothèque Babelio ou Goodreads</a></li>
       <li><a href="#accueil">L'accueil</a></li>
       <li><a href="#bibliotheque">Ta bibliothèque</a></li>
       <li><a href="#journal">Ton journal</a></li>
@@ -283,16 +284,41 @@
   <p>Deux autres icônes, en haut à droite de l'accueil : un <strong>graphique</strong> ouvre ton tableau de bord de lecture, et un <strong>rond avec un profil</strong> ouvre tes réglages.</p>
 
   <h2 id="ajouter">Ajouter un livre</h2>
-  <p>Depuis l'accueil, touche le premier bouton, <strong>Ajouter un livre</strong> (icône code-barres). Trois choix s'offrent à toi :</p>
+  <p>Depuis l'accueil, touche le premier bouton, <strong>Ajouter un livre</strong> (icône code-barres). Cinq choix s'offrent à toi :</p>
   <ul>
     <li><strong>Scanner un livre :</strong> vise le code-barres ISBN, au dos du livre. Litrea récupère automatiquement le titre, l'auteur, l'éditeur et la couverture depuis des sources bibliographiques (Electre, la BnF...).</li>
     <li><strong>Scanner plusieurs livres :</strong> pour cataloguer toute une pile ou une étagère d'un coup, sans repasser par le formulaire entre chaque livre. Une liste en bas de l'écran compte les livres déjà scannés ; touche-la pour la dérouler.</li>
+    <li><strong>Rechercher un livre :</strong> par titre, auteur ou ISBN, quand tu n'as pas le livre sous la main.</li>
     <li><strong>Saisie manuelle :</strong> pour un livre sans code-barres exploitable (édition très ancienne, livre étranger...) ou si le scan ne trouve rien.</li>
+    <li><strong>Importer depuis Babelio ou Goodreads :</strong> pour récupérer d'un coup une bibliothèque tenue ailleurs (voir plus bas).</li>
   </ul>
   <h3>Le code-barres ne se scanne pas</h3>
   <p>Rapproche-toi un peu, ou touche le bouton de zoom en haut à droite de l'écran de scan (jusqu'à 3×, réglé sur 1,5× par défaut) : certaines éditions ont un code-barres minuscule. Un livre ancien porte parfois deux codes-barres : cherche celui qui commence par <strong>978</strong> ou <strong>979</strong>.</p>
   <h3>Une information est fausse sur la fiche</h3>
   <p>Les sources bibliographiques ne sont pas parfaites. Corrige n'importe quel champ à tout moment via <strong>Modifier la fiche</strong>, depuis la fiche du livre.</p>
+
+  <h2 id="importer">Importer ta bibliothèque Babelio ou Goodreads</h2>
+  <p>Tu tiens déjà ta bibliothèque sur Babelio ou Goodreads&nbsp;? Inutile de rescanner tes livres un par un : Litrea lit le fichier d'export de ces sites et crée chaque livre avec sa fiche complète, comme après un scan.</p>
+  <h3>1. Récupérer le fichier</h3>
+  <ul>
+    <li><strong>Babelio</strong> (sur le site, dans un navigateur : l'export n'existe pas dans l'appli Babelio) : ton profil, puis <strong>Paramétrer le compte</strong>, puis <strong>Paramètres</strong>, et dans la colonne de droite <strong>Exporter ma bibliothèque</strong>. Ta liste d'envies s'exporte à part : <strong>Mes livres</strong>, puis <strong>Exporter ma wishlist</strong>.</li>
+    <li><strong>Goodreads</strong> (sur le site) : <strong>My Books</strong>, puis <strong>Import and export</strong> dans la colonne de gauche, puis <strong>Export Library</strong>. Le lien de téléchargement apparaît au bout de quelques minutes pour une grande bibliothèque.</li>
+  </ul>
+  <h3>2. L'ouvrir dans Litrea</h3>
+  <p>Deux façons de faire :</p>
+  <ul>
+    <li>Dans Litrea, <strong>Ajouter un livre</strong>, puis <strong>Importer depuis Babelio ou Goodreads</strong>, puis <strong>Choisir le fichier</strong>.</li>
+    <li>Le fichier est sur ton ordinateur&nbsp;? Envoie-le-toi par e-mail, ouvre la pièce jointe sur ton téléphone et choisis <strong>Ouvrir avec Litrea</strong>.</li>
+  </ul>
+  <p>Litrea t'indique combien de livres il a trouvés, par statut, et combien sont déjà dans ta bibliothèque. Ces derniers ne sont jamais modifiés : tu peux importer un fichier plusieurs fois sans créer de doublon. Garde l'appli ouverte pendant l'import, compte environ une minute pour 100 livres ; si tu la fermes, tu reprends là où tu t'étais arrêté.</p>
+  <h3>Ce qui est repris</h3>
+  <ul>
+    <li><strong>Lus</strong> et <strong>En cours</strong> gardent leur statut. Les livres <strong>À lire</strong> de Babelio arrivent dans ta bibliothèque et ta pile à lire ; ta liste d'envies Babelio et l'étagère «&nbsp;to-read&nbsp;» de Goodreads arrivent dans <strong>Sur ma liste</strong>.</li>
+    <li>Ta note (une demi-étoile est arrondie à l'étoile du dessus), et pour Goodreads ta date de lecture et ton avis, placé dans tes notes personnelles.</li>
+    <li>Les livres abandonnés ne sont pas importés d'office : ils rejoignent la liste <strong>À vérifier</strong>.</li>
+  </ul>
+  <h3>La liste «&nbsp;À vérifier&nbsp;»</h3>
+  <p>Quand un livre n'a pas d'ISBN exploitable, Litrea le cherche par titre et auteur, et ne l'ajoute que s'il trouve une seule édition qui correspond sans hésitation. Sinon, plutôt que de deviner, il le met dans la liste <strong>À vérifier</strong>, en bas de l'écran d'import. Touche <strong>Chercher</strong> à côté d'un livre pour choisir toi-même la bonne édition : il disparaît de la liste une fois ajouté.</p>
 
   <h2 id="accueil">L'accueil</h2>
   <p>Sous ton nom, quatre boutons donnent un accès direct à :</p>
