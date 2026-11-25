@@ -14,12 +14,14 @@
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script>
-  // Lien du QR code des marque-pages (litrea.fr/app) : l'iPhone et l'iPad
+  // Lien des QR codes (marque-pages et page d'accueil du site, litrea.fr/app).
+  // Source « qr-code » dans les campagnes App Store Connect et en
+  // source UTM dans la Play Console. L'iPhone et l'iPad
   // partent vers l'App Store, Android vers Google Play, avant même
   // l'affichage. Sur ordinateur, la page propose les deux.
   (function () {
-    var APP_STORE = 'https://apps.apple.com/app/id6790877791';
-    var GOOGLE_PLAY = 'https://play.google.com/store/apps/details?id=com.jeanwitt.litrea';
+    var APP_STORE = 'https://apps.apple.com/app/apple-store/id6790877791?pt=128834740&ct=qr-code&mt=8';
+    var GOOGLE_PLAY = 'https://play.google.com/store/apps/details?id=com.jeanwitt.litrea&referrer=utm_source%3Dqr-code%26utm_medium%3Dprint';
     var ua = navigator.userAgent || '';
     // Android d'abord : la détection de l'iPad ci-dessous (un « Mac » à écran
     // tactile) ne doit jamais rattraper un téléphone Android.
@@ -83,8 +85,8 @@
     <img class="logo" src="/logo.svg" alt="Litrea">
     <h1>Télécharge Litrea sur ton téléphone</h1>
     <div class="stores">
-      <a class="badge-store" href="https://apps.apple.com/app/id6790877791">App Store</a>
-      <a class="badge-store" href="https://play.google.com/store/apps/details?id=com.jeanwitt.litrea">Google Play</a>
+      <a class="badge-store" href="https://apps.apple.com/app/apple-store/id6790877791?pt=128834740&amp;ct=qr-code&amp;mt=8">App Store</a>
+      <a class="badge-store" href="https://play.google.com/store/apps/details?id=com.jeanwitt.litrea&amp;referrer=utm_source%3Dqr-code%26utm_medium%3Dprint">Google Play</a>
     </div>
     <a class="retour" href="/">Découvrir Litrea</a>
   </main>

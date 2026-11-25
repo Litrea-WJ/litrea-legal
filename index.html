@@ -3,23 +3,120 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Litrea · Ton univers littéraire</title>
-<meta name="description" content="Litrea, le journal de lecture pensé pour celles et ceux qui aiment les livres. Disponible sur l'App Store et Google Play.">
-<meta property="og:title" content="Litrea · Ton univers littéraire">
-<meta property="og:description" content="Litrea, le journal de lecture pensé pour celles et ceux qui aiment les livres.">
+<title>Litrea, journal de lecture : scanne tes livres, garde tes citations</title>
+<meta name="description" content="Litrea, journal de lecture sur iPhone et Android : scanne tes livres, garde tes citations et les mots appris, importe ta bibliothèque Babelio ou Goodreads.">
+<meta property="og:title" content="Litrea, journal de lecture : scanne tes livres, garde tes citations">
+<meta property="og:description" content="Scanne tes livres, garde tes citations et les mots appris, importe ta bibliothèque Babelio ou Goodreads. Sur iPhone et Android.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://litrea.fr">
+<meta property="og:site_name" content="Litrea">
+<meta property="og:url" content="https://litrea.fr/">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:image" content="https://litrea.fr/og-image.png">
 <meta property="og:image:width" content="1024">
 <meta property="og:image:height" content="500">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Litrea · Ton univers littéraire">
-<meta name="twitter:description" content="Litrea, le journal de lecture pensé pour celles et ceux qui aiment les livres.">
+<meta name="twitter:title" content="Litrea, journal de lecture : scanne tes livres, garde tes citations">
+<meta name="twitter:description" content="Scanne tes livres, garde tes citations et les mots appris, importe ta bibliothèque Babelio ou Goodreads. Sur iPhone et Android.">
 <meta name="twitter:image" content="https://litrea.fr/og-image.png">
 <link rel="canonical" href="https://litrea.fr/">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!-- Données structurées (schema.org) : décrivent l'appli, son éditeur et ses
+     tarifs pour les moteurs de recherche et les assistants IA. À tenir à jour
+     avec la page (fonctionnalités, prix). -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://litrea.fr/#organisation",
+      "name": "Litrea",
+      "url": "https://litrea.fr/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://litrea.fr/presse/logo/litrea-icone-appli.png",
+        "width": 1024,
+        "height": 1024
+      },
+      "description": "Litrea est une application de journal de lecture pour iPhone et Android, conçue et développée à Paris par Jean Wittmann.",
+      "email": "contact@litrea.fr",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Paris",
+        "addressCountry": "FR"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Jean Wittmann",
+        "url": "https://witrea.fr/"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://litrea.fr/#site",
+      "url": "https://litrea.fr/",
+      "name": "Litrea",
+      "inLanguage": "fr-FR",
+      "publisher": { "@id": "https://litrea.fr/#organisation" }
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://litrea.fr/#application",
+      "name": "Litrea",
+      "alternateName": "Litrea - journal de lecture",
+      "url": "https://litrea.fr/",
+      "description": "Journal de lecture : scanne le code-barres d'un livre pour obtenir sa fiche complète, garde tes citations, tes notes et les mots appris, suis tes statistiques et ton bilan annuel. Importe ta bibliothèque Babelio ou Goodreads en un seul fichier.",
+      "applicationCategory": "ReferenceApplication",
+      "applicationSubCategory": "Livres",
+      "operatingSystem": "iOS, iPadOS, Android",
+      "inLanguage": "fr",
+      "datePublished": "2026-10-20",
+      "image": "https://litrea.fr/og-image.png",
+      "screenshot": [
+        "https://litrea.fr/presse/captures/litrea-01-accueil.png",
+        "https://litrea.fr/presse/captures/litrea-08-citations.png",
+        "https://litrea.fr/presse/captures/litrea-11-bilan.png"
+      ],
+      "featureList": [
+        "Scan du code-barres (ISBN) : la fiche du livre se remplit (auteur, éditeur, collection, édition originale, série)",
+        "Import de bibliothèque depuis Babelio ou Goodreads",
+        "Citations, notes et mots appris, avec un quiz pour réviser",
+        "Statistiques de lecture et bilan annuel à partager",
+        "Séries, prix littéraires, maisons d'édition et métiers du livre",
+        "Prêts et dons de livres",
+        "Partage d'une fiche livre avec des personnes choisies, sans fil public"
+      ],
+      "installUrl": [
+        "https://apps.apple.com/app/id6790877791",
+        "https://play.google.com/store/apps/details?id=com.jeanwitt.litrea"
+      ],
+      "sameAs": [
+        "https://apps.apple.com/app/id6790877791",
+        "https://play.google.com/store/apps/details?id=com.jeanwitt.litrea"
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Abonnement mensuel",
+          "price": "3.49",
+          "priceCurrency": "EUR",
+          "description": "Premier mois offert, sans carte bancaire. Sans engagement. Tarif en France, toutes taxes comprises."
+        },
+        {
+          "@type": "Offer",
+          "name": "Abonnement annuel",
+          "price": "34.90",
+          "priceCurrency": "EUR",
+          "description": "Premier mois offert, sans carte bancaire. Sans engagement. Tarif en France, toutes taxes comprises."
+        }
+      ],
+      "author": { "@id": "https://litrea.fr/#organisation" },
+      "publisher": { "@id": "https://litrea.fr/#organisation" }
+    }
+  ]
+}
+</script>
 <style>
   :root {
     --brown: #6B3A2A;
@@ -635,9 +732,12 @@
       <img src="qr-litrea-app.svg" alt="QR code : télécharger Litrea sur l'App Store ou Google Play" width="150" height="150">
     </div>
 
+    <!-- Liens de suivi : « site » dans les campagnes App Store Connect
+         (Analytics > Acquisition > Campaigns) et en source UTM dans la Play
+         Console. -->
     <div class="stores">
-      <a class="badge-store" href="https://apps.apple.com/app/id6790877791">App Store</a>
-      <a class="badge-store" href="https://play.google.com/store/apps/details?id=com.jeanwitt.litrea">Google Play</a>
+      <a class="badge-store" href="https://apps.apple.com/app/apple-store/id6790877791?pt=128834740&amp;ct=site&amp;mt=8">App Store</a>
+      <a class="badge-store" href="https://play.google.com/store/apps/details?id=com.jeanwitt.litrea&amp;referrer=utm_source%3Dsite%26utm_medium%3Dweb">Google Play</a>
     </div>
   </div>
 
